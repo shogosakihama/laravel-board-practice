@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use App\Like;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -102,9 +101,8 @@ class ArticleController extends Controller
     }
 
     //count();
-    $count_like_users = $article->like_users()->count();
 
-    return view('show', ['message' => $message, 'article' => $article, 'login_user_id' =>$login_user_id, 'posts' =>$posts,'user' =>$user,'like'=>$like,'count_like_users'=>$count_like_users]);
+    return view('show', ['message' => $message, 'article' => $article, 'login_user_id' =>$login_user_id, 'posts' =>$posts,'user' =>$user]);
 }
     /**
      * Show the form for editing the specified resource.

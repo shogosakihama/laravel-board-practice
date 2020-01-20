@@ -42,12 +42,6 @@ Route::delete('/article/{id}','ArticleController@destroy')->name('article.delete
 
 ///いいね機能
 
-//いいねする
-Route::post('/article/{id}/likes','LikeController@store')->name('likes.like');
-//いいねを取り消す
-Route::delete('/article/{id}/unlikes','LikeController@destroy')->name('likes.unlike');
-//ログインしていない状態のユーザーがいいね!ボタンを押すと、ログインへ誘導するフラッシュメッセージを表示する。
-Route::post('/article/{id}/showFlash','LikeController@showFlash')->name('likes.showFlash');
 
 Auth::routes();
 

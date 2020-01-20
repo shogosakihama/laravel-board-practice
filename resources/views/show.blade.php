@@ -14,9 +14,7 @@
         <p></p>
         <div>
         @unless(Auth::user())
-            {{ Form::open(['method' => 'post', 'route' => ['likes.showFlash', $article->id]]) }}
-              {{ Form::submit('いいね',['class'=>'btn btn-outline-secondary']) }} {{ $count_like_users }}
-            {{ Form::close() }}
+            
 
           @if(session('flash_message'))
           <P>{{ session('flash_message')}}</p>
