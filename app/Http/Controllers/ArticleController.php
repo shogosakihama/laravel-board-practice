@@ -152,5 +152,18 @@ class ArticleController extends Controller
           var_dump($json);
         return view('test');
     }
+
+    public function update(Request $request, $id, Article $article)
+    {
+      $article = Article::find($id);
+      $article->titile = $request->titile;
+      $article->content = $request->content;
+      $article->user_name = $request->user_name;
+      $article->save();
+      return redirect()->route('article.show',['id'=>$article->id]);
+
+      
+    }
+
 }
 
